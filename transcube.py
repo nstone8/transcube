@@ -52,10 +52,9 @@ def rip(rom_file,min_char=3,max_char=500,lang=en+jap,ratio_lang=.75,cur_start=0)
             print('\r'+' '*50,end='')
             print(f'\r{percent_complete}% complete',end='')
 
-        if not cur%3E8:
+        if not cur%1E8:
             print('\t Removing Duplicates',end='')
             strings,start_index,stop_index=remove_duplicates(strings,start_index,stop_index)
-
 
         old_cur=cur
         this_chunk=[]
@@ -156,6 +155,8 @@ def rip(rom_file,min_char=3,max_char=500,lang=en+jap,ratio_lang=.75,cur_start=0)
 
 def remove_duplicates(strings,start_index,stop_index):
     #print('remove duplicates')
+    if not strings:
+        return [],[],[]
     strings_out=[]
     start_index_out=[]
     stop_index_out=[]
