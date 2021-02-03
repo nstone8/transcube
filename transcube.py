@@ -54,7 +54,7 @@ def rip(rom_file,min_char=3,max_char=500,lang=en+jap,ratio_lang=.75,cur_start=0)
 
         if not cur%3E8:
             print('\t Removing Duplicates',end='')
-            word_frame,strings,start_index,stop_index=remove_duplicates(strings,start_index,stop_index)
+            strings,start_index,stop_index=remove_duplicates(strings,start_index,stop_index)
 
 
         old_cur=cur
